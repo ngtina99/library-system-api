@@ -1,0 +1,33 @@
+@host = http://localhost:5130
+
+### Create user
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Alice Smith",
+  "email": "alice@example.com"
+}
+
+### Get users
+GET {{host}}/api/users
+
+### Create book
+POST {{host}}/api/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publishedYear": 2008
+}
+
+### Get books
+GET {{host}}/api/books
+
+### Available books
+GET {{host}}/api/books?available=true
+
+### Search by author
+GET {{host}}/api/books?author=Martin
