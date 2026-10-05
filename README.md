@@ -85,7 +85,6 @@ Project/
 ├── Models/            # Persistence/domain entities
 ├── Data/              # EF Core DbContext and configurations
 ├── Validation/        # Custom validation attributes
-├── Endpoints/         # API endpoint definitions (if using Minimal APIs)
 └── tests/             # Automated tests
 ```
 
