@@ -133,13 +133,13 @@ public class BookService : IBookService
             return DeleteBookResult.NotFound;
         }
 
-        var hasActiveLoan = await _context.Loans.AnyAsync(
+/*         var hasActiveLoan = await _context.Loans.AnyAsync(
             loan => loan.BookId == id && loan.ReturnDate == null);
 
         if (hasActiveLoan)
         {
             return DeleteBookResult.BookOnLoan;
-        }
+        } */
 
         _context.Books.Remove(book);
 

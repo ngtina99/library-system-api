@@ -9,8 +9,13 @@ builder.Services.AddControllers();
 
 builder.Services.AddProblemDetails();
 
+var connectionString = builder.Configuration
+    .GetConnectionString("LibraryDb")
+    ?? throw new InvalidOperationException(
+        "Connection string 'LibraryDb' was not found.");
+
 builder.Services.AddDbContext<LibraryDbContext>(options =>
-    options.UseInMemoryDatabase("LibraryDb"));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IUserService, UserService>();
